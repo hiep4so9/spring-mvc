@@ -92,6 +92,38 @@ public class ProductDAO {
 	}
 	
 	
+	public Product getProductById(long productId) {
+        Product product = null;
+        String sql = "SELECT * FROM products WHERE ProductId=?";
+        try {
+            conn = DatabaseConfig.getConnection();
+            sttm = conn.prepareStatement(sql);
+            sttm.setLong(1, productId);
+            
+                product = new Product();
+    			sttm.setLong(1, product.getProductId());
+    			sttm.setString(2, product.getProductName());
+    			sttm.setInt(3, product.getListPrice());
+    			sttm.setString(4, product.getProductImage());
+    			sttm.setString(5, product.getImage1());
+    			sttm.setString(6, product.getImage2());
+    			sttm.setString(7, product.getDescription());
+    	        sttm.setTimestamp(8,product.getCreate_at());
+    			sttm.setLong(9, product.getCategoryID());
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                sttm.close();
+                conn.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return product;
+    }
+	
 	public int updateProduct(Product product) {
 		try {
 		String sql = "UPDATE `products` "

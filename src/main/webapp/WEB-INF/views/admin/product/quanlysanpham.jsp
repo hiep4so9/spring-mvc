@@ -16,6 +16,7 @@
 				</div>
 				<div class="card-body">
 				<a class="btn btn-primary" href="/spring-mvc/addproduct" role="button">Thêm</a>
+				<hr>
 					<div class="table-responsive">
 						<table id="table-product"
 							class="table table-striped table-bordered table-hover">
@@ -35,7 +36,8 @@
 										<td>${product.productName}</td>
 										<td>${product.listPrice}</td>
 										<td>${productDAO.getNameById(product.productId)}</td>
-										<th>Type user</th>
+										<th><a class="btn btn-success" href="/spring-mvc/editproduct/${product.productId}" role="button">Sửa</a>
+										<a class="btn btn-danger" href="/spring-mvc/addproduct" role="button">Xóa</a></th>
 										</tr>
 								</c:forEach>
 							</tbody>

@@ -31,7 +31,7 @@
 							Tên sản phẩm: <input type="text" name="productname"> 
 							Giá: <input type="text" name="listprice"> 
 							Thể loại: <select name="categoryID"> 
-							<option value="volvo">Volvo</option>
+							<option value="volvo">1</option>
 							</select> <input type="submit" value="submit">
 						</form>
 					</div>
