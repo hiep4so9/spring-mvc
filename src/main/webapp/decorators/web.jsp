@@ -5,12 +5,12 @@
 
 		<head>
 			<meta charset="utf-8" />
-			<title>Bootshop online Shopping cart</title>
+			<title>Linh kiện điện tử</title>
 			<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 			<meta name="description" content="" />
 			<meta name="author" content="" />
 			
-
+			<script src="https://kit.fontawesome.com/a1de901b92.js" crossorigin="anonymous"></script>
 			<!-- Bootstrap style -->
 			<link id="callCss" rel="stylesheet" href="template/web/themes/bootshop/bootstrap.min.css" media="screen" />
 			<link href="template/web/themes/css/base.css" rel="stylesheet" media="screen" />
@@ -30,6 +30,7 @@
 			<link rel="apple-touch-icon-precomposed"
 				href="template/web/themes/images/ico/apple-touch-icon-57-precomposed.png" />
 			<style type="text/css" id="enject"></style>
+			
 		</head>
 
 		<body>
