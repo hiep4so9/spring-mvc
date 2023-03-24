@@ -14,7 +14,7 @@ Connection conn = null;
 	
 	java.sql.PreparedStatement sttm = null;
 	
-	public int addProduct(Bill bill) {
+	public int addBill(Bill bill) {
 		try {
 		String sql = "INSERT INTO `bills` "
 				+ "(`bill_id`, `date_order`, `total`, `status`, `Create_at`, `Id_customer`) "

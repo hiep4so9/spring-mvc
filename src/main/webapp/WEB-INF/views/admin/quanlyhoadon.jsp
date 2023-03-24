@@ -16,6 +16,7 @@
 				</div>
 				<div class="card-body">
 					<div class="table-responsive">
+						<a class="btn btn-primary" href="/spring-mvc/addBill" role="button">Thêm</a>
 						<table id="table-product"
 							class="table table-striped table-bordered table-hover">
 							<thead>
