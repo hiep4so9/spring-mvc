@@ -114,6 +114,7 @@ public class HomeController {
 		return mav;
 	}
 	
+	
 	@RequestMapping("/quanlykhachhang")
 	public ModelAndView Quanlykhachhang() {	
 		 ModelAndView mav = new ModelAndView();
