@@ -27,9 +27,9 @@ pageEncoding="UTF-8"%>
                 <c:forEach items="${userList}" var="user">
                   <tr>
                   	
-					<td>${user.id_user}</td>
-                    <td>${user.name}</td>
-                    <td>${user.email}</td>
+				<td>${user.id_user}</td>
+                  <td>${user.name}</td>
+                  <td>${user.email}</td>
                   <td>${user.password}</td>
                   <th>Type user</th>
                   <th>Create at</th>

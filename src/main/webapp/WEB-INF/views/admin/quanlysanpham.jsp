@@ -15,6 +15,7 @@
 					<i class="fas fa-table"></i> Quản lý sản phẩm
 				</div>
 				<div class="card-body">
+				<a class="btn btn-primary" href="/spring-mvc/addproduct" role="button">Thêm</a>
 					<div class="table-responsive">
 						<table id="table-product"
 							class="table table-striped table-bordered table-hover">
