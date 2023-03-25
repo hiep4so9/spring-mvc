@@ -1,102 +1,429 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-
-<html>
-
-<head>
-
-<meta charset="UTF-8">
-<title>Trang chủ</title>
-
-</head>
-
-<body>
-	
-	<!-- Page Content -->
-	<div class="container">
-
-		<!-- Heading Row -->
-		<div class="row align-items-center my-5">
-			<div class="col-lg-7">
-				<img class="img-fluid rounded mb-4 mb-lg-0"
-					src="http://placehold.it/900x400" alt="">
-			</div>
-			<!-- /.col-lg-8 -->
-			<div class="col-lg-5">
-				<h1 class="font-weight-light">Business Name or Tagline</h1>
-				
-				<p>This is a template that is great for small businesses. It
-					doesn't have too much fancy flare to it, but it makes a great use
-					of the standard Bootstrap core components. Feel free to use this
-					template for any project you want!</p>
-				<a class="btn btn-primary" href="#">Call to Action!</a>
-			</div>
-			<!-- /.col-md-4 -->
-		</div>
-		<!-- /.row -->
-
-		<!-- Call to Action Well -->
-		<div class="card text-white bg-secondary my-5 py-4 text-center">
-			<div class="card-body">
-				<p class="text-white m-0">This call to action card is a great
-					place to showcase some important information or display a clever
-					tagline!</p>
-			</div>
-		</div>
-
-		<!-- Content Row -->
-		<div class="row">
-			<div class="col-md-4 mb-5">
-				<div class="card h-100">
-					<div class="card-body">
-						<h2 class="card-title">Card One</h2>
-						<p class="card-text">Lorem ipsum dolor sit amet, consectetur
-							adipisicing elit. Rem magni quas ex numquam, maxime minus quam
-							molestias corporis quod, ea minima accusamus.</p>
-					</div>
-					<div class="card-footer">
-						<a href="#" class="btn btn-primary btn-sm">More Info</a>
+<div id="carouselBlk">
+	<div id="myCarousel" class="carousel slide">
+		<div class="carousel-inner">
+			<div class="item active">
+				<div class="container">
+					<a href="register.html"><img style="width: 100%"
+						src="template/web/themes/images/carousel/1.png"
+						alt="special offers" /></a>
+					<div class="carousel-caption">
+						<h4>Second Thumbnail label</h4>
+						<p>Luong the luc</p>
 					</div>
 				</div>
 			</div>
-			<!-- /.col-md-4 -->
-			<div class="col-md-4 mb-5">
-				<div class="card h-100">
-					<div class="card-body">
-						<h2 class="card-title">Card Two</h2>
-						<p class="card-text">Lorem ipsum dolor sit amet, consectetur
-							adipisicing elit. Quod tenetur ex natus at dolorem enim! Nesciunt
-							pariatur voluptatem sunt quam eaque, vel, non in id dolore
-							voluptates quos eligendi labore.</p>
-					</div>
-					<div class="card-footer">
-						<a href="#" class="btn btn-primary btn-sm">More Info</a>
+			<div class="item">
+				<div class="container">
+					<a href="register.html"><img style="width: 100%"
+						src="template/web/themes/images/carousel/2.png" alt="" /></a>
+					<div class="carousel-caption">
+						<h4>Second Thumbnail label</h4>
+						<p>Cras justo odio, dapibus ac facilisis in, egestas eget
+							quam. Donec id elit non mi porta gravida at eget metus. Nullam id
+							dolor id nibh ultricies vehicula ut id elit.</p>
 					</div>
 				</div>
 			</div>
-			<!-- /.col-md-4 -->
-			<div class="col-md-4 mb-5">
-				<div class="card h-100">
-					<div class="card-body">
-						<h2 class="card-title">Card Three</h2>
-						<p class="card-text">Lorem ipsum dolor sit amet, consectetur
-							adipisicing elit. Rem magni quas ex numquam, maxime minus quam
-							molestias corporis quod, ea minima accusamus.</p>
-					</div>
-					<div class="card-footer">
-						<a href="#" class="btn btn-primary btn-sm">More Info</a>
+			<div class="item">
+				<div class="container">
+					<a href="register.html"><img
+						src="template/web/themes/images/carousel/3.png" alt="" /></a>
+					<div class="carousel-caption">
+						<h4>Second Thumbnail label</h4>
+						<p>Cras justo odio, dapibus ac facilisis in, egestas eget
+							quam. Donec id elit non mi porta gravida at eget metus. Nullam id
+							dolor id nibh ultricies vehicula ut id elit.</p>
 					</div>
 				</div>
 			</div>
-			<!-- /.col-md-4 -->
-
+			<div class="item">
+				<div class="container">
+					<a href="register.html"><img
+						src="template/web/themes/images/carousel/4.png" alt="" /></a>
+					<div class="carousel-caption">
+						<h4>Second Thumbnail label</h4>
+						<p>Cras justo odio, dapibus ac facilisis in, egestas eget
+							quam. Donec id elit non mi porta gravida at eget metus. Nullam id
+							dolor id nibh ultricies vehicula ut id elit.</p>
+					</div>
+				</div>
+			</div>
+			<div class="item">
+				<div class="container">
+					<a href="register.html"><img
+						src="template/web/themes/images/carousel/5.png" alt="" /></a>
+					<div class="carousel-caption">
+						<h4>Second Thumbnail label</h4>
+						<p>Cras justo odio, dapibus ac facilisis in, egestas eget
+							quam. Donec id elit non mi porta gravida at eget metus. Nullam id
+							dolor id nibh ultricies vehicula ut id elit.</p>
+					</div>
+				</div>
+			</div>
+			<div class="item">
+				<div class="container">
+					<a href="register.html"><img
+						src="template/web/themes/images/carousel/6.png" alt="" /></a>
+					<div class="carousel-caption">
+						<h4>Second Thumbnail label</h4>
+						<p>Cras justo odio, dapibus ac facilisis in, egestas eget
+							quam. Donec id elit non mi porta gravida at eget metus. Nullam id
+							dolor id nibh ultricies vehicula ut id elit.</p>
+					</div>
+				</div>
+			</div>
 		</div>
-		<!-- /.row -->
-
+		<a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+		<a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
 	</div>
-	<!-- /.container -->
+</div>
+<div id="mainBody">
+	<div class="container">
+		<div class="row">
+			<!-- Sidebar ================================================== -->
+			<%@ include file="/common/web/sidebar.jsp"%>
+			<!-- Sidebar end=============================================== -->
+			<div class="span9">
+				<div class="well well-small">
+					<h4>
+						Featured Products <small class="pull-right">200+ featured
+							products</small>
+					</h4>
+					<div class="row-fluid">
+						<div id="featured" class="carousel slide">
+							<div class="carousel-inner">
+								<div class="item active">
+									<ul class="thumbnails">
+										<li class="span3">
+											<div class="thumbnail">
+												<i class="tag"></i> <a href="product_details.html"><img
+													src="template/web/themes/images/products/b1.jpg" alt="" /></a>
+												<div class="caption">
+													<h5>Product name</h5>
+													<h4>
+														<a class="btn" href="product_details.html">VIEW</a> <span
+															class="pull-right">$222.00</span>
+													</h4>
+												</div>
+											</div>
+										</li>
+										<li class="span3">
+											<div class="thumbnail">
+												<i class="tag"></i> <a href="product_details.html"><img
+													src="template/web/themes/images/products/b2.jpg" alt="" /></a>
+												<div class="caption">
+													<h5>Product name</h5>
+													<h4>
+														<a class="btn" href="product_details.html">VIEW</a> <span
+															class="pull-right">$222.00</span>
+													</h4>
+												</div>
+											</div>
+										</li>
+										<li class="span3">
+											<div class="thumbnail">
+												<i class="tag"></i> <a href="product_details.html"><img
+													src="template/web/themes/images/products/b3.jpg" alt="" /></a>
+												<div class="caption">
+													<h5>Product name</h5>
+													<h4>
+														<a class="btn" href="product_details.html">VIEW</a> <span
+															class="pull-right">$222.00</span>
+													</h4>
+												</div>
+											</div>
+										</li>
+										<li class="span3">
+											<div class="thumbnail">
+												<i class="tag"></i> <a href="product_details.html"><img
+													src="template/web/themes/images/products/b4.jpg" alt="" /></a>
+												<div class="caption">
+													<h5>Product name</h5>
+													<h4>
+														<a class="btn" href="product_details.html">VIEW</a> <span
+															class="pull-right">$222.00</span>
+													</h4>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</div>
+								<div class="item">
+									<ul class="thumbnails">
+										<li class="span3">
+											<div class="thumbnail">
+												<i class="tag"></i> <a href="product_details.html"><img
+													src="template/web/themes/images/products/5.jpg" alt="" /></a>
+												<div class="caption">
+													<h5>Product name</h5>
+													<h4>
+														<a class="btn" href="product_details.html">VIEW</a> <span
+															class="pull-right">$222.00</span>
+													</h4>
+												</div>
+											</div>
+										</li>
+										<li class="span3">
+											<div class="thumbnail">
+												<i class="tag"></i> <a href="product_details.html"><img
+													src="template/web/themes/images/products/6.jpg" alt="" /></a>
+												<div class="caption">
+													<h5>Product name</h5>
+													<h4>
+														<a class="btn" href="product_details.html">VIEW</a> <span
+															class="pull-right">$222.00</span>
+													</h4>
+												</div>
+											</div>
+										</li>
+										<li class="span3">
+											<div class="thumbnail">
+												<a href="product_details.html"><img
+													src="template/web/themes/images/products/7.jpg" alt="" /></a>
+												<div class="caption">
+													<h5>Product name</h5>
+													<h4>
+														<a class="btn" href="product_details.html">VIEW</a> <span
+															class="pull-right">$222.00</span>
+													</h4>
+												</div>
+											</div>
+										</li>
+										<li class="span3">
+											<div class="thumbnail">
+												<a href="product_details.html"><img
+													src="template/web/themes/images/products/8.jpg" alt="" /></a>
+												<div class="caption">
+													<h5>Product name</h5>
+													<h4>
+														<a class="btn" href="product_details.html">VIEW</a> <span
+															class="pull-right">$222.00</span>
+													</h4>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</div>
+								<div class="item">
+									<ul class="thumbnails">
+										<li class="span3">
+											<div class="thumbnail">
+												<a href="product_details.html"><img
+													src="template/web/themes/images/products/9.jpg" alt="" /></a>
+												<div class="caption">
+													<h5>Product name</h5>
+													<h4>
+														<a class="btn" href="product_details.html">VIEW</a> <span
+															class="pull-right">$222.00</span>
+													</h4>
+												</div>
+											</div>
+										</li>
+										<li class="span3">
+											<div class="thumbnail">
+												<a href="product_details.html"><img
+													src="template/web/themes/images/products/10.jpg" alt="" /></a>
+												<div class="caption">
+													<h5>Product name</h5>
+													<h4>
+														<a class="btn" href="product_details.html">VIEW</a> <span
+															class="pull-right">$222.00</span>
+													</h4>
+												</div>
+											</div>
+										</li>
+										<li class="span3">
+											<div class="thumbnail">
+												<a href="product_details.html"><img
+													src="template/web/themes/images/products/11.jpg" alt="" /></a>
+												<div class="caption">
+													<h5>Product name</h5>
+													<h4>
+														<a class="btn" href="product_details.html">VIEW</a> <span
+															class="pull-right">$222.00</span>
+													</h4>
+												</div>
+											</div>
+										</li>
+										<li class="span3">
+											<div class="thumbnail">
+												<a href="product_details.html"><img
+													src="template/web/themes/images/products/1.jpg" alt="" /></a>
+												<div class="caption">
+													<h5>Product name</h5>
+													<h4>
+														<a class="btn" href="product_details.html">VIEW</a> <span
+															class="pull-right">$222.00</span>
+													</h4>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</div>
+								<div class="item">
+									<ul class="thumbnails">
+										<li class="span3">
+											<div class="thumbnail">
+												<a href="product_details.html"><img
+													src="template/web/themes/images/products/2.jpg" alt="" /></a>
+												<div class="caption">
+													<h5>Product name</h5>
+													<h4>
+														<a class="btn" href="product_details.html">VIEW</a> <span
+															class="pull-right">$222.00</span>
+													</h4>
+												</div>
+											</div>
+										</li>
+										<li class="span3">
+											<div class="thumbnail">
+												<a href="product_details.html"><img
+													src="template/web/themes/images/products/3.jpg" alt="" /></a>
+												<div class="caption">
+													<h5>Product name</h5>
+													<h4>
+														<a class="btn" href="product_details.html">VIEW</a> <span
+															class="pull-right">$222.00</span>
+													</h4>
+												</div>
+											</div>
+										</li>
+										<li class="span3">
+											<div class="thumbnail">
+												<a href="product_details.html"><img
+													src="template/web/themes/images/products/4.jpg" alt="" /></a>
+												<div class="caption">
+													<h5>Product name</h5>
+													<h4>
+														<a class="btn" href="product_details.html">VIEW</a> <span
+															class="pull-right">$222.00</span>
+													</h4>
+												</div>
+											</div>
+										</li>
+										<li class="span3">
+											<div class="thumbnail">
+												<a href="product_details.html"><img
+													src="template/web/themes/images/products/5.jpg" alt="" /></a>
+												<div class="caption">
+													<h5>Product name</h5>
+													<h4>
+														<a class="btn" href="product_details.html">VIEW</a> <span
+															class="pull-right">$222.00</span>
+													</h4>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<a class="left carousel-control" href="#featured"
+								data-slide="prev">‹</a> <a class="right carousel-control"
+								href="#featured" data-slide="next">›</a>
+						</div>
+					</div>
+				</div>
+				<h4>Latest Products</h4>
+				<ul class="thumbnails">
+					<li class="span3">
+						<div class="thumbnail">
+							<a href="product_details.html"><img
+								src="template/web/themes/images/products/6.jpg" alt="" /></a>
+							<div class="caption">
+								<h5>Product name</h5>
+								<p>Lorem Ipsum is simply dummy text.</p>
 
-</body>
-
-</html>
+								<h4 style="text-align: center">
+									<a class="btn" href="product_details.html"> <i
+										class="icon-zoom-in"></i></a> <a class="btn" href="#">Add to <i
+										class="icon-shopping-cart"></i></a> <a class="btn btn-primary"
+										href="#">$222.00</a>
+								</h4>
+							</div>
+						</div>
+					</li>
+					<li class="span3">
+						<div class="thumbnail">
+							<a href="product_details.html"><img
+								src="template/web/themes/images/products/7.jpg" alt="" /></a>
+							<div class="caption">
+								<h5>Product name</h5>
+								<p>Lorem Ipsum is simply dummy text.</p>
+								<h4 style="text-align: center">
+									<a class="btn" href="product_details.html"> <i
+										class="icon-zoom-in"></i></a> <a class="btn" href="#">Add to <i
+										class="icon-shopping-cart"></i></a> <a class="btn btn-primary"
+										href="#">$222.00</a>
+								</h4>
+							</div>
+						</div>
+					</li>
+					<li class="span3">
+						<div class="thumbnail">
+							<a href="product_details.html"><img
+								src="template/web/themes/images/products/8.jpg" alt="" /></a>
+							<div class="caption">
+								<h5>Product name</h5>
+								<p>Lorem Ipsum is simply dummy text.</p>
+								<h4 style="text-align: center">
+									<a class="btn" href="product_details.html"> <i
+										class="icon-zoom-in"></i></a> <a class="btn" href="#">Add to <i
+										class="icon-shopping-cart"></i></a> <a class="btn btn-primary"
+										href="#">$222.00</a>
+								</h4>
+							</div>
+						</div>
+					</li>
+					<li class="span3">
+						<div class="thumbnail">
+							<a href="product_details.html"><img
+								src="template/web/themes/images/products/9.jpg" alt="" /></a>
+							<div class="caption">
+								<h5>Product name</h5>
+								<p>Lorem Ipsum is simply dummy text.</p>
+								<h4 style="text-align: center">
+									<a class="btn" href="product_details.html"> <i
+										class="icon-zoom-in"></i></a> <a class="btn" href="#">Add to <i
+										class="icon-shopping-cart"></i></a> <a class="btn btn-primary"
+										href="#">$222.00</a>
+								</h4>
+							</div>
+						</div>
+					</li>
+					<li class="span3">
+						<div class="thumbnail">
+							<a href="product_details.html"><img
+								src="template/web/themes/images/products/10.jpg" alt="" /></a>
+							<div class="caption">
+								<h5>Product name</h5>
+								<p>Lorem Ipsum is simply dummy text.</p>
+								<h4 style="text-align: center">
+									<a class="btn" href="product_details.html"> <i
+										class="icon-zoom-in"></i></a> <a class="btn" href="#">Add to <i
+										class="icon-shopping-cart"></i></a> <a class="btn btn-primary"
+										href="#">$222.00</a>
+								</h4>
+							</div>
+						</div>
+					</li>
+					<li class="span3">
+						<div class="thumbnail">
+							<a href="product_details.html"><img
+								src="template/web/themes/images/products/11.jpg" alt="" /></a>
+							<div class="caption">
+								<h5>Product name</h5>
+								<p>Lorem Ipsum is simply dummy text.</p>
+								<h4 style="text-align: center">
+									<a class="btn" href="product_details.html"> <i
+										class="icon-zoom-in"></i></a> <a class="btn" href="#">Add to <i
+										class="icon-shopping-cart"></i></a> <a class="btn btn-primary"
+										href="#">$222.00</a>
+								</h4>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>

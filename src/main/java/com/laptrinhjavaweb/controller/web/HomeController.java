@@ -13,4 +13,11 @@ public class HomeController {
 		ModelAndView mav = new ModelAndView("web/home");
 		return mav;
 	}
+	
+	@RequestMapping(value = "/profile", method = RequestMethod.GET)
+	public ModelAndView profile() {
+		ModelAndView mav = new ModelAndView("web/user/profile");
+		return mav;
+	}
+	
 }

@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<div id="header">
+<div id="header" >
 	<div class="container">
 
 		<!-- Navbar ================================================== -->
@@ -12,7 +12,7 @@
 				class="icon-bar"></span> <span class="icon-bar"></span>
 			</a>
 			<div class="navbar-inner">
-				<a class="brand" href="index.html">Linh kiện</a>
+				<a class="brand" href="index.html">Electric</a>
 				<form class="form-inline navbar-search" method="post"
 					action="products.html">
 					<input id="srchFld" class="srchTxt" type="text" /> <select
@@ -30,28 +30,30 @@
 				<ul id="topMenu" class="nav pull-right">
 					<li class=""><a href="special_offer.html">Specials Offer</a></li>
 					<li class=""><a href="normal.html">Delivery</a></li>
-					<li class=""><a href="contact.html">Contact</a></li>
+					
 					<%
-				if (request.getSession().getAttribute("userSession") != null) {
-				%>
-				<li class="nav-item"><a
-					class="nav-link" href="#" id="userDropdown"
-					role="button"
-					aria-expanded="false"> <i class="fas fa-user-circle fa-fw"></i>
-					${userSession.email}
-				</a>
+					if (request.getSession().getAttribute("userSession") != null) {
+					%>
+					<li class=""><a href="/spring-mvc/dangxuat">Logout</a></li>
+					<li class="nav-item">
+					<a class="nav-link" href="trang-chu/profile"
+						id="userDropdown" role="button" aria-expanded="false"> 
+						<i class="fas fa-user-circle fa-fw"></i> ${userSession.email}
+					</a>
 					</li>
-				<%
-				} else {
-				%>
-				<li class="nav-item"><a class="nav-link" href="/spring-mvc/dangnhap">Login</a></li>
-				<li class="nav-item"><a class="nav-link" href="/spring-mvc/dangky">SignUp</a></li>
-				<%
-				}
-				%>
+					<%
+					} else {
+					%>
+					<li class="nav-item"><a class="nav-link"
+						href="/spring-mvc/dangnhap">Login</a></li>
+					<li class="nav-item"><a class="nav-link"
+						href="/spring-mvc/dangky">SignUp</a></li>
+					<%
+					}
+					%>
 
-					
-					
+
+
 				</ul>
 			</div>
 		</div>

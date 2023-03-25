@@ -1,6 +1,6 @@
 package model;
 
-import java.security.Timestamp;
+import java.sql.Timestamp;
 
 public class Categories {
 	private Long categoryID;
@@ -40,8 +40,8 @@ public class Categories {
 	public Timestamp getCreate_at() {
 		return create_at;
 	}
-	public void setCreate_at(Timestamp create_at) {
-		this.create_at = create_at;
+	public void setCreate_at(Timestamp timestamp) {
+		this.create_at = timestamp;
 	}
 	@Override
 	public String toString() {
