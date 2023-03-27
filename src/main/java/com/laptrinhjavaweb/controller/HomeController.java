@@ -28,7 +28,6 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import DAO.BillDAO;
@@ -41,7 +40,6 @@ import model.Categories;
 import model.Customer;
 import model.Product;
 import model.Users;
-import model.slides;
 
 @Controller(value = "homeControllerOfLogin")
 public class HomeController {
