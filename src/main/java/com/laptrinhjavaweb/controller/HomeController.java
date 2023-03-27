@@ -9,13 +9,17 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.apache.commons.io.IOUtils;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
-
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -24,14 +28,20 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import DAO.BillDAO;
+import DAO.CategoriesDAO;
 import DAO.CustomerDAO;
 import DAO.ProductDAO;
 import DAO.UserDAO;
 import model.Bill;
+import model.Categories;
 import model.Customer;
 import model.Product;
 import model.Users;
+import model.slides;
 
 @Controller(value = "homeControllerOfLogin")
 public class HomeController {
@@ -69,11 +79,11 @@ public class HomeController {
 	public String Dangky() {
 		return "dangky";
 	}
-
+	
 	@RequestMapping(value = "/dangkypost", method = RequestMethod.POST)
 	public ModelAndView DangkyPost(HttpServletRequest request) {
 		UserDAO dao = new UserDAO();
-
+		
 		Users user = new Users();
 		user.setName(request.getParameter("username"));
 		user.setEmail(request.getParameter("email"));
@@ -97,6 +107,7 @@ public class HomeController {
 		mav.addObject("userList", userList);
 		return mav;
 	}
+	
 
 	@RequestMapping("/quanlyproduct")
 	public ModelAndView Quanlysanpham() {
@@ -157,99 +168,104 @@ public class HomeController {
 		return mav;
 	}
 
-	@RequestMapping("/addproduct")
-	public String addProduct() {
-		return "/admin/addProduct";
+	@RequestMapping("/editproduct")
+	public ModelAndView editProduct(HttpServletRequest request) {
+		CategoriesDAO categoryDAO = new CategoriesDAO();
+		ProductDAO dao = new ProductDAO();
+		ModelAndView model = new ModelAndView();
+		List<Categories> listCategory = categoryDAO.readCategories();
+		Product product = dao.getProductById(Long.parseLong(request.getParameter("id").trim()));
+		List<String> listStatus = dao.getListStatus();
+		model.addObject("product", product);
+		model.addObject("listCategory", listCategory);
+		model.addObject("listStatus", listStatus);
+		model.setViewName("admin/editProduct");
+		return model;
 	}
 	
+	@RequestMapping("/addproduct")
+	public ModelAndView addProduct() {
+		CategoriesDAO categoryDAO = new CategoriesDAO();
+		ModelAndView model = new ModelAndView();
+		List<Categories> listCategory = categoryDAO.readCategories();
+		model.addObject("listCategory", listCategory);
+		model.setViewName("admin/addProduct");
+		return model;
+	}
+	@RequestMapping(value="/delete-product", method = RequestMethod.POST)
+	@ResponseBody
+    public String doAction(@RequestBody String selectedValues) {
+		System.out.println(selectedValues);
+
+		ObjectMapper mapper = new ObjectMapper();
+		try {
+		    @SuppressWarnings("unchecked")
+			Map<String, Object> jsonMap = mapper.readValue(selectedValues, Map.class);
+
+			List<String> Values = (List<String>) jsonMap.get("selectedValues");
+
+		    List<Long> selectedIds = new ArrayList<>();
+		    for (String value : Values) {
+		        selectedIds.add(Long.parseLong(value));
+		    }
+		    ProductDAO dao = new ProductDAO();
+		    for(long item : selectedIds) {
+		    	if(dao.hideProduct(item) == 1) {
+		    		System.out.println(selectedIds);
+				    
+		    	}
+		    }
+		    return selectedIds.toString();
+		} catch (Exception ex) {
+		    ex.printStackTrace();
+
+		}
+	    return "404";
+		
+ 
+    }
 	@RequestMapping(value = "/addproduct", method = RequestMethod.POST)
 	public ModelAndView AddBill(MultipartHttpServletRequest request) {
-	
+
 		ProductDAO dao = new ProductDAO();
 		Product product = new Product();
 		MultipartFile file1 = request.getFile("file1");
-		MultipartFile file2= request.getFile("file2");
-		MultipartFile file3 = request.getFile("file3");
 		ModelAndView model = new ModelAndView();
-		//handle anh 1
+
+		// handle anh 1
 		if (!file1.isEmpty()) {
-	        try {
-	            String originalFilename = file1.getOriginalFilename();
-	            String extension = originalFilename.substring(originalFilename.lastIndexOf("."));
-	            String newFilename ="hinh1" + LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd-HHmmss")) + extension;
-	            byte[] bytes = file1.getBytes();
-	            ServletContext context = request.getServletContext();
+			try {
+				String originalFilename = file1.getOriginalFilename();
+				String extension = originalFilename.substring(originalFilename.lastIndexOf("."));
+				String newFilename = "hinh1"
+						+ LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd-HHmmss")) + extension;
+				byte[] bytes = file1.getBytes();
+				ServletContext context = request.getServletContext();
 
-		        String path1 = context.getRealPath("/resources/images/" + newFilename);
-		        product.setProductImage(newFilename);
-	            FileOutputStream fos = new FileOutputStream(path1);
-	            fos.write(bytes);
-	            fos.close();
-	            model.addObject("message2", "File uploaded successfully");
+				String path1 = context.getRealPath("/resources/images/" + newFilename);
+				product.setProductImage(newFilename);
+				FileOutputStream fos = new FileOutputStream(path1);
+				fos.write(bytes);
+				fos.close();
+				model.addObject("message1", "File uploaded successfully");
 
-	        } catch (IOException e) {
-	            e.printStackTrace();
-	            model.addObject("message2", "File upload failed");
-	            return new ModelAndView("redirect:/spring-mvc/addproduct");
-	        }
-	    } else {
-	        model.addObject("message2", "Please select a file to upload");
-	        return new ModelAndView("redirect:/spring-mvc/addproduct");
-	    }
-		//handle anh 2
-		if (!file2.isEmpty()) {
-	        try {
-	            String originalFilename = file2.getOriginalFilename();
-	            String extension = originalFilename.substring(originalFilename.lastIndexOf("."));
-	            String newFilename = "hinh2" + LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd-HHmmss")) + extension;
-	            byte[] bytes = file2.getBytes();
-	            ServletContext context = request.getServletContext();
-
-		        String path2 = context.getRealPath("/resources/images/" + newFilename);
-		        product.setImage1(newFilename);
-	            FileOutputStream fos = new FileOutputStream(path2);
-	            fos.write(bytes);
-	            fos.close();
-	            model.addObject("message2", "File uploaded successfully");
-
-	        } catch (IOException e) {
-	            e.printStackTrace();
-	            model.addObject("message2", "File upload failed");
-	            return new ModelAndView("redirect:/spring-mvc/addproduct");
-	        }
-	    } else {
-	        model.addObject("message2", "Please select a file to upload");
-	        return new ModelAndView("redirect:/spring-mvc/addproduct");
-	    }
-		//handle anh 3\
-		if (!file3.isEmpty()) {
-	        try {
-	            String originalFilename = file3.getOriginalFilename();
-	            String extension = originalFilename.substring(originalFilename.lastIndexOf("."));
-	            String newFilename = "hinh3" + LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd-HHmmss")) + extension;
-	            byte[] bytes = file3.getBytes();
-	            ServletContext context = request.getServletContext();
-
-		        String path3 = context.getRealPath("/resources/images/" + newFilename);
-		        product.setImage2(newFilename);
-	            FileOutputStream fos = new FileOutputStream(path3);
-	            fos.write(bytes);
-	            fos.close();
-	            model.addObject("message3", "File uploaded successfully");
-
-	        } catch (IOException e) {
-	            e.printStackTrace();
-	            model.addObject("message3", "File upload failed");
-	            return new ModelAndView("redirect:/spring-mvc/addproduct");
-	        }
-	    } else {
-	        model.addObject("message3", "Please select a file to upload");
-	        return new ModelAndView("redirect:/spring-mvc/addproduct");
-	    }
+			} catch (IOException e) {
+				e.printStackTrace();
+				model.addObject("message2", "File upload failed");
+				return new ModelAndView("redirect:/addproduct");
+			}
+		} else {
+			model.addObject("message2", "Please select a file to upload");
+			return new ModelAndView("redirect:/addproduct");
+		}
+		// handle anh 2
+		
 		product.setProductName(request.getParameter("productname"));
 		product.setListPrice(Integer.parseInt(request.getParameter("listprice")));
 		product.setCategoryID(Long.parseLong(request.getParameter("categoryID")));
-		
+		System.out.println(request.getParameter("description"));
+		product.setDescription(request.getParameter("description"));
+
 		if (dao.addProduct(product) == 1) {
 			return new ModelAndView("redirect:/quanlyproduct");
 		} else {
