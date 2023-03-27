@@ -2,9 +2,6 @@ package model;
 
 import java.sql.Timestamp;
 
-
-
-
 public class Product {
 	private long ProductId;
 	private String ProductName;
@@ -13,6 +10,7 @@ public class Product {
 	private String Image1;
 	private String Image2;
 	private String Description;
+	private String Status;
 	private Timestamp Create_at;
 	private long categoryID;
 	
@@ -20,7 +18,7 @@ public class Product {
 		
 	}
 	public Product(long productId, String productName, int listPrice, String productImage, String image1, String image2,
-			String description, Timestamp create_at, long categoryID) {
+			String description, String status, Timestamp create_at, long categoryID) {
 		super();
 		ProductId = productId;
 		ProductName = productName;
@@ -29,7 +27,9 @@ public class Product {
 		Image1 = image1;
 		Image2 = image2;
 		Description = description;
+		Status = status;
 		Create_at = create_at;
+		
 		this.categoryID = categoryID;
 	}
 	public long getProductId() {
@@ -88,11 +88,12 @@ public class Product {
 	public void setCategoryID(long categoryID) {
 		this.categoryID = categoryID;
 	}
-	@Override
-	public String toString() {
-		return "Product [ProductId=" + ProductId + ", ProductName=" + ProductName + ", ListPrice=" + ListPrice
-				+ ", ProductImage=" + ProductImage + ", Image1=" + Image1 + ", Image2=" + Image2 + ", Description="
-				+ Description + ", Create_at=" + Create_at + ", categoryID=" + categoryID + "]";
+	
+	public String getStatus() {
+		return Status;
+	}
+	public void setStatus(String status) {
+		Status = status;
 	}
 
 }

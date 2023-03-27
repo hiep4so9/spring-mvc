@@ -28,7 +28,9 @@
         <decorator name="home" page="admin.jsp">
        <pattern>/quanlykhachhang</pattern>
     </decorator>
-    
+<decorator name="home" page="admin.jsp">
+       <pattern>/editproduct</pattern>
+    </decorator>
       <decorator name="home" page="admin.jsp">
        <pattern>/addBill</pattern>
     </decorator>

@@ -29,10 +29,10 @@
 								<form action="/spring-mvc/addproduct" name="addProduct" method="POST"
 									enctype="multipart/form-data">
 									<div class="form-group">
-										Tên sản phẩm: <input class="form-control" type="text" name="productname">
+										Tên sản phẩm: <input class="form-control" type="text" name="productname" value ="${product.productName }">
 									</div>
 									<div class="form-group">
-										Giá: <input type="number" class="form-control" name="listprice">
+										Giá: <input type="number" class="form-control" name="listprice" value = "${product.listPrice }">
 									</div>
 
 									<div class="form-group">
@@ -44,25 +44,32 @@
 											</c:forEach>
 										</select>
 									</div>
-
+									
 									<div class="form">
 										<label for="file1">File:</label> <input type="file" id="file" name="file1"
-											onchange="previewImage1(event)"> <img id="preview1" src="#"
-											alt="Preview Image"
-											style="display: none; max-width: 200px; max-height: 200px;">
-										<c:if test="${not empty message}">
-											<div class="alert alert-danger">${message}</div>
+											onchange="previewImage1(event)"> <img width="40" height="40"
+													src="<c:url value='/resources/images/${product.productImage}'/>"
+													alt="">
+										<c:if test="${not empty message1}">
+											<div class="alert alert-danger">${message1}</div>
 										</c:if>
 									</div>
 									
 									<div class="form-group">
 										<label for="description" class="form-label">Mô tả</label>
 										<textarea class="form-control" name="description" id="" cols="30"
-											rows="10" /></textarea>
+											rows="10" value="${product.description }" /></textarea>
 									</div>
-
-
-
+									<div class = "form-group">
+										<div class="form-group">
+										Trạng thái sản phẩm
+										<select name="status" class="form-control">
+											<c:forEach items="${listStatus}" var="status">
+												<option value="${status}">${status}</option>
+											</c:forEach>
+										</select>
+									</div>
+									</div>
 									<input type="submit" value="submit" class="btn btn-primary form-control">
 								</form>
 							</div>
@@ -76,7 +83,6 @@
 					reader.onload = function () {
 						var preview = document.getElementById('preview1');
 						preview.src = reader.result;
-						preview.style.display = 'block';
 					}
 					reader.readAsDataURL(event.target.files[0]);
 				}

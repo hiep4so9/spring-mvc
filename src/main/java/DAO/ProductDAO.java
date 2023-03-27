@@ -12,6 +12,7 @@ import java.util.List;
 
 import DB.connect.DatabaseConfig;
 import model.Product;
+import model.slides;
 
 public class ProductDAO {
 	Connection conn = null;
@@ -91,6 +92,33 @@ public class ProductDAO {
 		return categoryName;
 	}
 	
+	public List<String> getListStatus() {
+
+		ResultSet rs = null;
+		List<String> list = new ArrayList<>();
+		try {
+			String sql = "select DISTINCT Status FROM products";
+			conn = DatabaseConfig.getConnection();
+			sttm = conn.prepareStatement(sql)	;
+			rs = sttm.executeQuery();
+			while(rs.next()) {
+				list.add(rs.getString(1));
+			}	
+		} catch (Exception e) {	
+			System.out.println("error: " +e.toString());
+		}
+		finally {
+			try {
+				rs.close();
+				sttm.close();
+				conn.close();
+			}
+			catch(Exception error){
+				System.out.println("error: " +error.toString());
+			}
+		}
+		return list;
+	}
 	
 	public int updateProduct(Product product) {
 		try {
@@ -140,6 +168,37 @@ public class ProductDAO {
 		return -1;
 	}
 	
+	public int hideProduct(long id) {
+		try {
+		String sql = "UPDATE `products` SET `Status` = '0' WHERE `products`.`ProductId` = ?";
+			conn = DatabaseConfig.getConnection();
+			sttm = conn.prepareStatement(sql);
+			System.out.println(id);
+			sttm.setLong(1, id);
+			
+			if(sttm.executeUpdate()>0) {
+				System.out.println("Update sản phẩm thành công!");
+				return 1;
+			}
+			else {
+				return 0;
+			}
+
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		finally {
+			try {
+				sttm.close();
+				conn.close();
+			}
+			catch(Exception error){
+				System.out.println("error: " +error.toString());
+			}
+		}
+		return -1;
+	}
 	public int deleteProduct(long id) {
 		try {
 		String sql = "DELETE FROM products WHERE `products`.`ProductId` = ?";
@@ -181,6 +240,7 @@ public class ProductDAO {
 			conn = DatabaseConfig.getConnection();
 			sttm = conn.createStatement()	;
 			rs = sttm.executeQuery(sql);
+			
 			while(rs.next()) {
 				Product pd = new Product();
 				pd.setProductId(rs.getLong(1));
@@ -190,8 +250,9 @@ public class ProductDAO {
 				pd.setImage1(rs.getString(5));
 				pd.setImage2(rs.getString(6));
 				pd.setDescription(rs.getString(7));
-				pd.setCreate_at(rs.getTimestamp(8));
-				pd.setCategoryID(rs.getLong(9));
+				pd.setStatus(rs.getString(8));
+				pd.setCreate_at(rs.getTimestamp(9));
+				pd.setCategoryID(rs.getLong(10));
 				list.add(pd);
 			}	
 		
@@ -211,4 +272,43 @@ public class ProductDAO {
 		return list;
 	}
 	
+	public Product getProductById(long id) {
+
+		ResultSet rs = null;
+
+		Product pd = new Product();
+		try {
+			String sql = "Select * from products WHERE `products`.`ProductId` = ?";
+			conn = DatabaseConfig.getConnection();
+			sttm = conn.prepareStatement(sql)	;
+			sttm.setLong(1, id);
+			rs = sttm.executeQuery();
+			while(rs.next()) {
+				
+				pd.setProductId(rs.getLong(1));
+				pd.setProductName(rs.getNString(2));
+				pd.setListPrice(rs.getInt(3));
+				pd.setProductImage(rs.getString(4));
+				pd.setImage1(rs.getString(5));
+				pd.setImage2(rs.getString(6));
+				pd.setDescription(rs.getString(7));
+				pd.setStatus(rs.getString(8));
+				pd.setCreate_at(rs.getTimestamp(9));
+				pd.setCategoryID(rs.getLong(10));
+			}	
+		} catch (Exception e) {	
+			System.out.println("error: " +e.toString());
+		}
+		finally {
+			try {
+				rs.close();
+				sttm.close();
+				conn.close();
+			}
+			catch(Exception error){
+				System.out.println("error: " +error.toString());
+			}
+		}
+		return pd;
+	}
 }
