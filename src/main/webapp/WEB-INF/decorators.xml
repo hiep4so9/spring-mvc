@@ -35,8 +35,17 @@
        <pattern>/addBill</pattern>
     </decorator>
     
-          <decorator name="home" page="admin.jsp">
+    <decorator name="home" page="admin.jsp">
        <pattern>/addproduct</pattern>
     </decorator>
+    
+    <decorator name="home" page="admin.jsp">
+		<pattern>/quanlydondathang</pattern>
+	</decorator>
+	
+		<decorator name="home" page="admin.jsp">
+		<pattern>/quanlydonhang</pattern>
+	</decorator>
+
     
 </decorators>

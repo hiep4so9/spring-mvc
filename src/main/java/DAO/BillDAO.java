@@ -164,4 +164,77 @@ Connection conn = null;
 		}
 		return list;
 	}
+	
+	
+	public List<Bill> readBillByStatus() {
+		List<Bill> list = new ArrayList<>();
+		ResultSet rs = null;
+		Statement sttm = null;
+		try {
+			String sql = "Select * from bills WHERE `bills`.`status` = 0";
+			conn = DatabaseConfig.getConnection();
+			sttm = conn.createStatement()	;
+			rs = sttm.executeQuery(sql);
+			while(rs.next()) {
+				Bill pd = new Bill();
+				pd.setBill_id(rs.getLong(1));
+				pd.setDate_order(rs.getTimestamp(2));
+				pd.setTotal(rs.getFloat(3));
+				pd.setStatus(rs.getString(4));
+				pd.setCreate_at(rs.getTimestamp(5));
+				pd.setId_customer(rs.getLong(6));
+				list.add(pd);
+			}	
+		
+		} catch (Exception e) {	
+			System.out.println("error: " +e.toString());
+		}
+		finally {
+			try {
+				rs.close();
+				sttm.close();
+				conn.close();
+			}
+			catch(Exception error){
+				System.out.println("error: " +error.toString());
+			}
+		}
+		return list;
+	}
+	
+	public List<Bill> readBillDonHang() {
+		List<Bill> list = new ArrayList<>();
+		ResultSet rs = null;
+		Statement sttm = null;
+		try {
+			String sql = "Select * from bills WHERE `bills`.`status` = 1";
+			conn = DatabaseConfig.getConnection();
+			sttm = conn.createStatement()	;
+			rs = sttm.executeQuery(sql);
+			while(rs.next()) {
+				Bill pd = new Bill();
+				pd.setBill_id(rs.getLong(1));
+				pd.setDate_order(rs.getTimestamp(2));
+				pd.setTotal(rs.getFloat(3));
+				pd.setStatus(rs.getString(4));
+				pd.setCreate_at(rs.getTimestamp(5));
+				pd.setId_customer(rs.getLong(6));
+				list.add(pd);
+			}	
+		
+		} catch (Exception e) {	
+			System.out.println("error: " +e.toString());
+		}
+		finally {
+			try {
+				rs.close();
+				sttm.close();
+				conn.close();
+			}
+			catch(Exception error){
+				System.out.println("error: " +error.toString());
+			}
+		}
+		return list;
+	}
 }

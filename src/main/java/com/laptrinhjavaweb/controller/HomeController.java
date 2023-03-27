@@ -119,17 +119,43 @@ public class HomeController {
 		mav.addObject("productDAO", dao);
 		return mav;
 	}
+	
+	
 
 	@RequestMapping("/quanlyhoadon")
 	public ModelAndView Quanlyhoadon() {
 		ModelAndView mav = new ModelAndView();
-		mav.setViewName("admin/quanlyhoadon");
+		mav.setViewName("admin/Bill/quanlyhoadon");
 		BillDAO dao = new BillDAO();
 		List<Bill> billList = dao.readBill();
 		mav.addObject("billList", billList);
 		mav.addObject("billDAO", dao);
 		return mav;
 	}
+	
+	
+	@RequestMapping("/quanlydondathang")
+	public ModelAndView QuanlyDonDatHang() {
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("admin/Bill/quanlydondathang");
+		BillDAO dao = new BillDAO();
+		List<Bill> billList = dao.readBillByStatus();
+		mav.addObject("billList", billList);
+		mav.addObject("billDAO", dao);
+		return mav;
+	}
+	
+	@RequestMapping("/quanlydonhang")
+	public ModelAndView QuanLyDonHang() {
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("admin/Bill/quanlydondathang");
+		BillDAO dao = new BillDAO();
+		List<Bill> billList = dao.readBillDonHang();
+		mav.addObject("billList", billList);
+		mav.addObject("billDAO", dao);
+		return mav;
+	}
+
 
 	@RequestMapping("/quanlykhachhang")
 	public ModelAndView Quanlykhachhang() {
