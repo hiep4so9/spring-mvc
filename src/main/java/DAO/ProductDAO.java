@@ -12,7 +12,6 @@ import java.util.List;
 
 import DB.connect.DatabaseConfig;
 import model.Product;
-import model.slides;
 
 public class ProductDAO {
 	Connection conn = null;
@@ -59,7 +58,46 @@ public class ProductDAO {
 		}
 		return -1;
 	}
-	
+	public Product getproductById(long id) {
+		Product pd = null;
+		ResultSet rs = null;
+		try {
+//			String sql = "Select * from products"
+//					+ "WHERE ProductId = ?";
+			
+			String sql = "Select * FROM products WHERE `products`.`ProductId` = ?";
+			conn = DatabaseConfig.getConnection();
+			sttm = conn.prepareStatement(sql)	;
+			sttm.setLong(1, id);
+			rs = sttm.executeQuery();
+			while(rs.next()) {
+				pd = new Product();
+				pd.setProductId(rs.getLong(1));
+				pd.setProductName(rs.getNString(2));
+				pd.setListPrice(rs.getInt(3));
+				pd.setProductImage(rs.getString(4));
+				pd.setImage1(rs.getString(5));
+				pd.setImage2(rs.getString(6));
+				pd.setDescription(rs.getString(7));
+				pd.setCreate_at(rs.getTimestamp(9));
+				pd.setCategoryID(rs.getLong(10));
+			
+			}	
+		} catch (Exception e) {	
+			System.out.println("error: " +e.toString());
+		}
+		finally {
+			try {
+				rs.close();
+				sttm.close();
+				conn.close();
+			}
+			catch(Exception error){
+				System.out.println("error: " +error.toString());
+			}
+		}
+		return pd;
+	}
 	public String getNameById(long id) {
 
 		ResultSet rs = null;

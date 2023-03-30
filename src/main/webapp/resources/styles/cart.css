@@ -1,0 +1,99 @@
+.card {
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+.card {
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 210px;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  transition: transform 0.2s;
+  border-radius: 10px;
+  position: relative;
+  max-height: 300px;
+}
+
+/* Set a fixed height for the main content */
+
+.container {
+  padding: 0 15px;
+}
+
+h1 {
+  margin-top: 0;
+  padding-top: 20px;
+}
+
+/* Adjust the spacing between the cards */
+
+.row {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-right: inherit;
+  position: relative;
+}
+
+.card__buy-now {
+  position: absolute;
+  top: 10px;
+  /* Adjust the value as needed */
+  left: 10px;
+  /* Adjust the value as needed */
+}
+
+.card:hover {
+  border: 1px solid #007bff;
+  transform: scale(1.05);
+}
+
+.card:first-child {
+  margin-bottom: 20px;
+}
+
+.card-deck {
+  flex-flow: row wrap;
+  margin-right: -102px;
+  margin-left: -101px;
+}
+
+.btnReload {
+  background-color:#8c8c8c; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 8px;
+  width: 100%;
+}
+.btnReload:hover{
+    background-color: #0275d8;
+}
+
+.btnMove {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  left: 15px;
+}
+select {
+    width: 100%;
+    padding: 16px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #f1f1f1;
+    height: fit-content;
+  }
+  
