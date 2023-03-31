@@ -1,3 +1,8 @@
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+
+
 <div id="sidebar" class="span3">
     <div class="well well-small">
         <a id="myCart" href="product_summary.html"><img src="template/web/themes/images/ico-cart.png" alt="cart" />3
