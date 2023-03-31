@@ -104,7 +104,7 @@ public class ProductDAO {
 		String categoryName = "";
 		try {
 			String sql = "SELECT categoryName "
-					+ "FROM categories c,products p "
+					+ "FROM categories c, products p "
 					+ "WHERE c.categoryID = p.categoryID "
 					+ "and p.ProductId = ?";
 			conn = DatabaseConfig.getConnection();

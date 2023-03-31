@@ -241,7 +241,7 @@ public class HomeController {
 				byte[] bytes = file1.getBytes();
 				ServletContext context = request.getServletContext();
 
-				String path1 = context.getRealPath("/resources/images/" + newFilename);
+				String path1 = context.getRealPath("/resources/img/" + newFilename);
 				product.setProductImage(newFilename);
 				FileOutputStream fos = new FileOutputStream(path1);
 				fos.write(bytes);

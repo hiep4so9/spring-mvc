@@ -98,7 +98,7 @@
 							<div id="product-1" class="single-product">
 								<div class="part-1">
 								<a href="register.html"><img style="width: 130%"
-											src="template/web/themes/images/carousel/${product.productImage}" alt="" /></a>
+											src="<c:url value='/resources/img/${product.productImage}'/>" alt="" /></a>
 									<ul>
 										<li><a href="trang-chu/${product.productId}"><i class="fas fa-shopping-cart"></i></a></li>
 										<li><a href="#"><i class="fas fa-heart"></i></a></li>
@@ -124,6 +124,8 @@
 		</div>
 	</div>
 	</section>
+	      <%@ include file="/common/web/footer.jsp" %>
+	
 	<!-- partial -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

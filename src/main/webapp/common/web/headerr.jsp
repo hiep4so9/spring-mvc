@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
 		<div class="navbar-brand">
 		  <a href="trang-chu"><img src="${pageContext.request.contextPath}/resources/public/nhat.png"  style="height: fit-content; width: 40px; position: relative; left: 100px;"></a>
