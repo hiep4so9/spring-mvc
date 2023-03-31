@@ -1,6 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<div class="mt-5"></div>
+<div class="mt-5"></div>
+
+<div class="mt-5"></div>
+
+<div class="mt-5"></div>
+<div class="mt-5"></div>
+
 <div class="container-fluid">
 	<div class="row px-5">
 		<div class="col-md-7">
@@ -145,19 +153,11 @@
 							</form>
 						</div>
 					</div>
-
-
-
 				</div>
 
 			</div>
 
 		</div>
-
-
-
-
-
 	</div>
 	<div class="container-fluid"
 		style="position: absolute; margin-top: -15px; right: 400px; left: 990px; width: 30%;">
@@ -167,35 +167,35 @@
 				<div></div>
 			</div>
 		</div>
+	</div>
+</div>
 
 
-
-		<!-- Bootstrap JS -->
-		<script>
-			function updateTotal() {
-				var totalPrice = 0;
-				var inputs = document.querySelectorAll('input[type="number"]');
-				inputs
-						.forEach(function(input) {
-							var quantity = input.value;
-							var price = input.parentElement.nextElementSibling.textContent
-									.replace(/\D/g, '');
-							totalPrice += quantity * price;
-						});
-				document.getElementById("totalPrice").innerHTML = "&euro; "
-						+ totalPrice;
-			}
-		</script>
-		<script
-			src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-			integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-			crossorigin="anonymous"></script>
-		<script
-			src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"
-			integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-			crossorigin="anonymous"></script>
-		<script
-			src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"
-			integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-			crossorigin="anonymous"></script>
+	<!-- Bootstrap JS -->
+	<script>
+		function updateTotal() {
+			var totalPrice = 0;
+			var inputs = document.querySelectorAll('input[type="number"]');
+			inputs.forEach(function(input) {
+				var quantity = input.value;
+				var price = input.parentElement.nextElementSibling.textContent
+						.replace(/\D/g, '');
+				totalPrice += quantity * price;
+			});
+			document.getElementById("totalPrice").innerHTML = "&euro; "
+					+ totalPrice;
+		}
+	</script>
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"
+		integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js"
+		integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+		crossorigin="anonymous"></script>
