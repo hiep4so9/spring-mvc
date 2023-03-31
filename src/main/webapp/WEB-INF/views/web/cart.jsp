@@ -25,7 +25,8 @@
  <c:forEach items="${list}" var="product">
   <div class="row border-top border-bottom">
     <div class="row main align-items-center">
-      <div class="col-2"><img class="img-fluid" src="https://i.imgur.com/1GrakTl.jpg"></div>
+      <div class="col-2"><img class="img-fluid" src="<c:url value='/resources/img/${product.productImage}'/>"
+      ></div>
       <div class="col">
         <div class="row text-muted">${product.productName}</div>
         <div class="row">Cotton T-shirt</div>
