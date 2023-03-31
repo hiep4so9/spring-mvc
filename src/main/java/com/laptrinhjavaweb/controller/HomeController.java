@@ -200,6 +200,7 @@ public class HomeController {
 		    @SuppressWarnings("unchecked")
 			Map<String, Object> jsonMap = mapper.readValue(selectedValues, Map.class);
 
+			@SuppressWarnings("unchecked")
 			List<String> Values = (List<String>) jsonMap.get("selectedValues");
 
 		    List<Long> selectedIds = new ArrayList<>();
