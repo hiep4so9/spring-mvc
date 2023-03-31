@@ -26,6 +26,7 @@
 	<!-- Header End====================================================================== -->
 
 	<dec:body />
+	
 	<%@ include file="/common/web/footer.jsp"%>
 
 	<!-- partial -->
