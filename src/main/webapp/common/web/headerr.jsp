@@ -22,7 +22,7 @@
 		</div>
 		<div class="cart-icon" style="position: relative; left: 800px;">
 		  <a href="cart">
-			<i class="fas fa-shopping-cart">${a}</i>
+			<i style="color: white " class="fas fa-shopping-cart">${a }</i>
 			
 		  </a>
 		</div>

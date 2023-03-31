@@ -36,6 +36,10 @@ public class HomeController {
 		List<Product> productList = dao.readProduct();
 		mav.addObject("productList", productList);
 		mav.addObject("productDAO", dao);
+		Sharedata ls = new Sharedata();
+
+		int a = ls.CList.size();
+		mav.addObject("a",a );
 		return mav;
 	}
 
@@ -52,6 +56,7 @@ public class HomeController {
 			System.out.println("trang carrt" + ls.CList.get(i));
 
 		}
+		
 
 		for (int i = 0; i < list.size(); i++) {
 
@@ -60,10 +65,9 @@ public class HomeController {
 		}
 //		ls.CList.add(null);
 		ModelAndView mav = new ModelAndView("web/cart");
-		ModelAndView mav1 = new ModelAndView("/common/web/headerr");
 //		int a =  ls.CList.size();
 //		String s=String.valueOf(a);
-		mav1.getModelMap().addAttribute("a", ls.CList.size());
+		
 		mav.addObject("list", list);
 		mav.addObject("productDAO", dao);
 		return mav;
