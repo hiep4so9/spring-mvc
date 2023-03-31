@@ -4,128 +4,31 @@
 
 
 <div id="sidebar" class="span3">
-    <div class="well well-small">
-        <a id="myCart" href="product_summary.html"><img src="template/web/themes/images/ico-cart.png" alt="cart" />3
-            Items in
-            your cart
-            <span class="badge badge-warning pull-right">$155.00</span></a>
-    </div>
-    <ul id="sideManu" class="nav nav-tabs nav-stacked">
-        <li class="subMenu open">
-            <a> ELECTRONICS [230]</a>
-            <ul>
-                <li>
-                    <a class="active" href="products.html"><i class="icon-chevron-right"></i>Cameras
-                        (100)
-                    </a>
-                </li>
-                <li>
-                    <a href="products.html"><i class="icon-chevron-right"></i>Computers, Tablets &
-                        laptop (30)</a>
-                </li>
-                <li>
-                    <a href="products.html"><i class="icon-chevron-right"></i>Mobile Phone (80)</a>
-                </li>
-                <li>
-                    <a href="products.html"><i class="icon-chevron-right"></i>Sound & Vision (15)</a>
-                </li>
-            </ul>
-        </li>
-        <li class="subMenu">
-            <a> CLOTHES [840] </a>
-            <ul style="display: none">
-                <li>
-                    <a href="products.html"><i class="icon-chevron-right"></i>Women's Clothing
-                        (45)</a>
-                </li>
-                <li>
-                    <a href="products.html"><i class="icon-chevron-right"></i>Women's Shoes (8)</a>
-                </li>
-                <li>
-                    <a href="products.html"><i class="icon-chevron-right"></i>Women's Hand Bags
-                        (5)</a>
-                </li>
-                <li>
-                    <a href="products.html"><i class="icon-chevron-right"></i>Men's Clothings (45)</a>
-                </li>
-                <li>
-                    <a href="products.html"><i class="icon-chevron-right"></i>Men's Shoes (6)</a>
-                </li>
-                <li>
-                    <a href="products.html"><i class="icon-chevron-right"></i>Kids Clothing (5)</a>
-                </li>
-                <li>
-                    <a href="products.html"><i class="icon-chevron-right"></i>Kids Shoes (3)</a>
-                </li>
-            </ul>
-        </li>
-        <li class="subMenu">
-            <a>FOOD AND BEVERAGES [1000]</a>
-            <ul style="display: none">
-                <li>
-                    <a href="products.html"><i class="icon-chevron-right"></i>Angoves (35)</a>
-                </li>
-                <li>
-                    <a href="products.html"><i class="icon-chevron-right"></i>Bouchard Aine & Fils
-                        (8)</a>
-                </li>
-                <li>
-                    <a href="products.html"><i class="icon-chevron-right"></i>French Rabbit (5)</a>
-                </li>
-                <li>
-                    <a href="products.html"><i class="icon-chevron-right"></i>Louis Bernard (45)</a>
-                </li>
-                <li>
-                    <a href="products.html"><i class="icon-chevron-right"></i>BIB Wine (Bag in Box)
-                        (8)</a>
-                </li>
-                <li>
-                    <a href="products.html"><i class="icon-chevron-right"></i>Other Liquors & Wine
-                        (5)</a>
-                </li>
-                <li>
-                    <a href="products.html"><i class="icon-chevron-right"></i>Garden (3)</a>
-                </li>
-                <li>
-                    <a href="products.html"><i class="icon-chevron-right"></i>Khao Shong (11)</a>
-                </li>
-            </ul>
-        </li>
-        <li><a href="products.html">HEALTH & BEAUTY [18]</a></li>
-        <li><a href="products.html">SPORTS & LEISURE [58]</a></li>
-        <li><a href="products.html">BOOKS & ENTERTAINMENTS [14]</a></li>
-    </ul>
-    <br />
-    <div class="thumbnail">
-        <img src="template/web/themes/images/products/panasonic.jpg" alt="Bootshop panasonoc New camera" />
-        <div class="caption">
-            <h5>Panasonic</h5>
-            <h4 style="text-align: center">
-                <a class="btn" href="product_details.html">
-                    <i class="icon-zoom-in"></i></a>
-                <a class="btn" href="#">Add to <i class="icon-shopping-cart"></i></a>
-                <a class="btn btn-primary" href="#">$222.00</a>
-            </h4>
-        </div>
-    </div>
-    <br />
-    <div class="thumbnail">
-        <img src="template/web/themes/images/products/kindle.png" title="Bootshop New Kindel" alt="Bootshop Kindel" />
-        <div class="caption">
-            <h5>Kindle</h5>
-            <h4 style="text-align: center">
-                <a class="btn" href="product_details.html">
-                    <i class="icon-zoom-in"></i></a>
-                <a class="btn" href="#">Add to <i class="icon-shopping-cart"></i></a>
-                <a class="btn btn-primary" href="#">$222.00</a>
-            </h4>
-        </div>
-    </div>
-    <br />
-    <div class="thumbnail">
-        <img src="template/web/themes/images/payment_methods.png" title="Bootshop Payment Methods" alt="Payments Methods" />
-        <div class="caption">
-            <h5>Payment Methods</h5>
-        </div>
-    </div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
+		<div class="navbar-brand">
+		  <a href="#"><img src="#"  style="height: fit-content; width: 70px; position: relative; left: 100px;"></a>
+	  
+		</div>
+		<form class="form-inline my-2 my-lg-0" style="position: relative; left: 500px;">
+		  <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+		  <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="position: absolute; left: 240px; top: -1px;">Search</button>
+		</form>
+		<div class="dropdown" style="position: relative; left: 920px;">
+		  <button class="btn btn-secondary dropdown-toggle" type="button" id="profileDropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			<i class="fas fa-user"></i>
+		  </button>
+		  <div class="dropdown-menu" aria-labelledby="profileDropdownMenuButton">
+			<a class="dropdown-item" href="#">Profile</a>
+			<a class="dropdown-item" href="#">Quản lý đơn hàng</a>
+			<div class="dropdown-divider"></div>
+			<a class="dropdown-item" href="#">Logout</a>
+		  </div>
+		</div>
+		<div class="cart-icon" style="position: relative; left: 800px;">
+		  <a href="cart.php">
+			<i class="fas fa-shopping-cart"></i>
+			
+		  </a>
+		</div>
+	  </nav>
 </div>
