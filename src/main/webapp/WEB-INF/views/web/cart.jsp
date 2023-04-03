@@ -9,7 +9,12 @@
 <div class="mt-5"></div>
 <div class="mt-5"></div>
 	
-<div class="container-fluid">
+<div class="container-fluid" style="
+
+	margin-bottom: 300px;
+	margin-top: 50px;
+">
+<form method="post" action="">
 	<div class="row px-5">
 		<div class="col-md-7">
 			<div class="shopping-cart">
@@ -40,7 +45,7 @@
 
 			<div class="row">
 				<div class="col text-right">
-					<strong>Tổng tiền:</strong> <span id="totalPrice">&euro; 0</span>
+					
 				</div>
 			</div>
 
@@ -78,11 +83,13 @@
 						</div>
 						<hr>
 						<div>
-							<h6>Tổng tiền ở đây</h6>
+						
+							<h6  id="totalPrice1">${tongtien}</h6>
+							<input type="hidden" id="totalPrice" name="totalPrice" value="">
 						</div>
 						<hr>
 						<div>
-							<form>
+						
 								<select id="country" name="country">
 									<option value="An Giang">An Giang
 									<option value="Bà Rịa - Vũng Tàu">Bà Rịa - Vũng Tàu
@@ -150,7 +157,7 @@
 									<option value="Tp.Hà Nội">Tp.Hà Nội
 									<option value="TP  HCM">TP HCM
 								</select>
-							</form>
+						
 						</div>
 					</div>
 				</div>
@@ -163,29 +170,41 @@
 		style="position: absolute; margin-top: -15px; right: 400px; left: 990px; width: 30%;">
 		<div class="btnMove">
 			<div class="btnReload">
-				Làm Mới
-				<div></div>
+			
+				<button type="submit">THANH TOAN</button>
 			</div>
 		</div>
 	</div>
+	</form>
 </div>
 
 
 	<!-- Bootstrap JS -->
-	<script>
-		function updateTotal() {
-			var totalPrice = 0;
-			var inputs = document.querySelectorAll('input[type="number"]');
-			inputs.forEach(function(input) {
-				var quantity = input.value;
-				var price = input.parentElement.nextElementSibling.textContent
-						.replace(/\D/g, '');
-				totalPrice += quantity * price;
-			});
-			document.getElementById("totalPrice").innerHTML = "&euro; "
-					+ totalPrice;
-		}
-	</script>
+<script>
+    // Initialize the value of totalPrice when the page loads
+    var totalPrice = 0;
+    var inputs = document.querySelectorAll('input[type="number"]');
+    inputs.forEach(function(input) {
+        var quantity = input.value;
+        var price = input.parentElement.nextElementSibling.textContent.replace(/\D/g, '');
+        totalPrice += quantity * price;
+    });
+    document.getElementById("totalPrice").value = totalPrice;
+    document.getElementById("totalPrice1").innerHTML = "&euro; " + totalPrice;
+    
+    // Update the value of totalPrice when the user changes the quantity of a product
+    function updateTotal() {
+        var totalPrice = 0;
+        var inputs = document.querySelectorAll('input[type="number"]');
+        inputs.forEach(function(input) {
+            var quantity = input.value;
+            var price = input.parentElement.nextElementSibling.textContent.replace(/\D/g, '');
+            totalPrice += quantity * price;
+        });
+        document.getElementById("totalPrice").value = totalPrice;
+        document.getElementById("totalPrice1").innerHTML = "&euro; " + totalPrice;
+    }
+</script>
 	<script
 		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

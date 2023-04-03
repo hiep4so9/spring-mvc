@@ -25,16 +25,10 @@ footer {
 	<div class="container py-4">
 		<div class="row gy-4 gx-5">
 			<div class="col-lg-4 col-md-6">
-				<h5 class="h1 text-white">FB.</h5>
-				<p class="small text-muted">Lorem ipsum dolor sit amet,
-					consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
-				<p class="small text-muted mb-0">
-					&copy; Copyrights. All rights reserved. <a class="text-primary"
-						href="#">Bootstrapious.com</a>
-				</p>
+				<iframe src="https://www.google.com/maps/embed?pb=!1m27!1m12!1m3!1d1959.5625587299028!2d106.71335887435319!3d10.801728149036407!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m12!3e0!4m4!1s0x317528a459cb43ab%3A0x6c3d29d370b52a7e!3m2!1d10.801617499999999!2d106.71445589999999!4m5!1s0x317528a459cb43ab%3A0x6c3d29d370b52a7e!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBDw7RuZyBuZ2jhu4cgVFAuSENNIC0gSFVURUNILCA0NzVBIMSQLiDEkGnhu4duIEJpw6puIFBo4bunLCBQaMaw4budbmcgMjUsIELDrG5oIFRo4bqhbmgsIFRow6BuaCBwaOG7kSBI4buTIENow60gTWluaCwgVmnhu4d0IE5hbQ!3m2!1d10.801617499999999!2d106.71445589999999!5e0!3m2!1svi!2s!4v1680485485527!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 			</div>
 			<div class="col-lg-2 col-md-6">
-				<h5 class="text-white mb-3">Quick links</h5>
+				<h5 class="text-white mb-3">HLSN</h5>
 				<ul class="list-unstyled text-muted">
 					<li><a href="#">Home</a></li>
 					<li><a href="#">About</a></li>
@@ -52,9 +46,8 @@ footer {
 				</ul>
 			</div>
 			<div class="col-lg-4 col-md-6">
-				<h5 class="text-white mb-3">Newsletter</h5>
-				<p class="small text-muted">Lorem ipsum dolor sit amet,
-					consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+				<h5 class="text-white mb-3">HLSN</h5>
+				<p class="small text-muted">HLSN</p>
 				<form action="#">
 					<div class="input-group mb-3">
 						<input class="form-control" type="text"

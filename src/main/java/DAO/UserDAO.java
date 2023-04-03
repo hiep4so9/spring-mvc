@@ -53,6 +53,58 @@ public class UserDAO{
 		}
 		return list;
 	}
+	
+	
+	
+	public Users getProductByemail(String id) {
+
+		ResultSet rs = null;
+
+		Users pd = new Users();
+		try {
+			String sql = "Select * from users WHERE `users`.`email` = ?";
+			conn = DatabaseConfig.getConnection();
+			sttm = conn.prepareStatement(sql)	;
+			sttm.setString(1, id);
+			rs = sttm.executeQuery();
+			while(rs.next()) {
+				
+				
+				
+				pd.setId_user(rs.getLong(1));
+				pd.setName(rs.getString(2));
+				pd.setEmail(rs.getString(3));
+				pd.setPassword(rs.getString(4));
+				pd.setTypeuser(rs.getString(5));
+				pd.setCreate_at(rs.getTimestamp(6));
+				
+			}	
+		} catch (Exception e) {	
+			System.out.println("error: " +e.toString());
+		}
+		finally {
+			try {
+				rs.close();
+				sttm.close();
+				conn.close();
+			}
+			catch(Exception error){
+				System.out.println("error: " +error.toString());
+			}
+		}
+		return pd;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	public int addUser(Users user) {
 		try {
 		String sql = "INSERT INTO `users` (`Id_user`, `name`, `email`, `password`, `typeuser`, `create_at`)"

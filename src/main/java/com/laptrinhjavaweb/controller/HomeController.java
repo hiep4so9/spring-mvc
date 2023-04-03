@@ -5,11 +5,13 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
@@ -22,6 +24,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
@@ -34,6 +37,7 @@ import DAO.BillDAO;
 import DAO.CategoriesDAO;
 import DAO.CustomerDAO;
 import DAO.ProductDAO;
+import DAO.Sharedata;
 import DAO.UserDAO;
 import model.Bill;
 import model.Categories;
@@ -59,6 +63,7 @@ public class HomeController {
 			user.setPassword(request.getParameter("password"));
 			HttpSession userSession = request.getSession();
 			userSession.setAttribute("userSession", user);
+			userSession.setAttribute("userSessionemail", user.getEmail());
 			return new ModelAndView("redirect:/trang-chu");
 		} else {
 			return new ModelAndView("redirect:/dangnhap");
@@ -132,12 +137,58 @@ public class HomeController {
 	}
 	
 	
+	
+	//updaate 
+	@RequestMapping(value = "/quanlydondathang", method = RequestMethod.POST)
+	public ModelAndView addcarrtt(@RequestParam String id) {
+		System.out.println("sao ko vo dc v"+ id);
+	
+		BillDAO dao = new BillDAO();
+	
+
+//		Bill bill = new Bill();
+
+		long num = Long.parseLong(id); 
+		if (dao.updateBillgiaohang(num) == 1) {
+	
+			 return new ModelAndView("redirect:/home");
+		} else {
+			return new ModelAndView("web/cart");
+		}
+//		return new ModelAndView("web/cart");
+	    
+	}
+	
+	//updaate 
+	@RequestMapping(value = "/quanlydondathangg", method = RequestMethod.POST)
+	public ModelAndView addcarrttt(@RequestParam String id) {
+		System.out.println("sao ko vo dc v lan 2"+ id);
+	
+		BillDAO dao = new BillDAO();
+	
+
+//		Bill bill = new Bill();
+
+		long num = Long.parseLong(id); 
+		if (dao.updateBillhoanthanh(num) == 1) {
+	
+			 return new ModelAndView("redirect:/home");
+		} else {
+			return new ModelAndView("web/cart");
+		}
+//		return new ModelAndView("web/cart");
+	    
+	}
+	//day la cai trang nay
 	@RequestMapping("/quanlydondathang")
 	public ModelAndView QuanlyDonDatHang() {
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("admin/Bill/quanlydondathang");
 		BillDAO dao = new BillDAO();
-		List<Bill> billList = dao.readBillByStatus();
+		List<Bill> billList = dao.dochoadon();
+		System.out.println("kiem dia chi lan 3:  ");
+		System.out.println("kiem dia chi lan 2:  " +billList.toString());
+
 		mav.addObject("billList", billList);
 		mav.addObject("billDAO", dao);
 		return mav;

@@ -27,11 +27,15 @@
 									<th>Trạng thái</th>
 									<th>Ngày tạo</th>
 									<th>Mã khách hàng</th>
+									<th>diachi</th>
 									<th>Action</th>
 								</tr>
 							</thead>
+							
 							<tbody>
 								<c:forEach items="${billList}" var="bill">
+								<% System.out.println( "billList= " + 
+                     pageContext.findAttribute("billList") ); %>
 									<tr>
 										<td>${bill.bill_id}</td>
 										<td>${bill.date_order}</td>
@@ -39,11 +43,22 @@
 										<td>${bill.status}</td>
 										<td>${bill.create_at}</td>
 <%-- 										<td>${bill.Id_customer}</td> --%>
-										<td>${billDAO.getNameById(bill.bill_id)}</td>
+										<td>${bill.id_customer}</td>
+										<td>${bill.diachi}</td>
+										<form method="post" action="">
+										<td><input  type="hidden" name="id" value="${bill.bill_id}"></td>
 										<!-- <th>Type user</th> -->
+										<td><button type="submit">Gửi Hàng</button></td>
+											</form>
+											<form method="post" action="/spring-mvc/quanlydondathangg">
+											<td><input  type="hidden" name="id" value="${bill.bill_id}"></td>
+										<td><button type="submit">Hoàn Thành</button></td>
+										</form>
+										
 										</tr>
 								</c:forEach>
 							</tbody>
+						
 						</table>
 					</div>
 				</div>
